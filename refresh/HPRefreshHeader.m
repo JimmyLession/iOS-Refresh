@@ -90,14 +90,15 @@
     
     switch (state) {
         case MJRefreshStateIdle:
-          //  self.leftImageView.image  = [UIImage imageNamed:@"icon_refresh_ arrows"];
+            self.leftImageView.image  = [UIImage imageNamed:@"icon_refresh_ arrows"];
             break;
         case MJRefreshStatePulling:
+            //如果self的高度为默认或者小于150以下时候这里是会执行的。太高的时候就不执行了。。。
             self.leftImageView.image  = [UIImage imageNamed:@"icon_refresh_ arrows"];
             break;
         case MJRefreshStateRefreshing:
             self.title.text = @"正在刷新...";
-            [self setUpRefreshLable:self.leftImageView];
+          //  [self setUpRefreshLable:self.leftImageView];
             break;
         default:
             break;
